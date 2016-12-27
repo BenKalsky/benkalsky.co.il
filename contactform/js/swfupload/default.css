@@ -1,0 +1,115 @@
+.progressWrapper {
+	width: 240px;
+	overflow: hidden;
+}
+
+.progressContainer {
+	margin: 6px 0;
+	padding: 4px;
+	border: solid 1px #E8E8E8; /* .red inherits this border color */
+	background-color: #F7F7F7;
+	overflow: hidden;
+	
+	-moz-border-radius:2px;
+	-khtml-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+/* Message */
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	/*border: solid 1px #B50000;*/
+	/*background-color: #FFEBEB;*/
+	border:1px solid #FFF;/* .red inherits progressContainer border color */
+}
+
+/* Current */
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+/* Complete */
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.progressName {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #555;
+	width: 200px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	font-size: 0;
+	width: 0%;
+	height: 2px;
+	background-color: blue;
+	margin-top: 2px;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+.progressBarStatus {
+	width: 400px;
+	margin-top: 2px;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align: left;
+	font-size: 11px;
+	white-space: nowrap;
+
+}
+
+a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 14px;
+	width: 14px;
+	background-image: url('img/cancelbutton.gif');
+	background-repeat: no-repeat;
+	background-position: -14px 0px;
+	float: right;
+}
+
+a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+
+
+/* -- SWFUpload Object Styles ------------------------------- */
+.swfupload {
+	vertical-align: top;
+}
+.red{
+	background-color:#FF0000;
+	color:#fff;
+	padding:5px 7px;}
+
+.red .progressName{color:#fff}
+

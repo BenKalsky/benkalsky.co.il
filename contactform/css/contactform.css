@@ -1,0 +1,146 @@
+.cfg-clear {
+	clear: both;
+}
+.cfg-contactform {
+	margin-top: 10px;
+	position: relative;
+	z-index: 300;
+}
+.ui-datepicker {
+	font-size: 9pt !important;
+}
+.cfg-element-container {
+	clear: both;
+	position: relative;
+	z-index: 300;
+}
+.cfg-element-set {
+	margin-bottom: 16px;
+	position: relative;
+	z-index: 300;
+}
+.cfg-option-set::after { /* restore margin bottom when elements are floating */
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.cfg-label {
+	display: block;
+	margin-right: 10px;
+}
+.cfg-paragraph {
+	margin-bottom: 1px; /* IE (for paragraphs above <select>) */
+}
+.captcha_container {
+	margin-top: 2px;
+}
+.cfg-submit {
+	cursor: pointer;
+	padding: 4px;
+}
+.cfg-required {
+	color: #990000;
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+}
+.cfg-loading {
+	display: none;
+	background: url('../img/loading.gif') no-repeat 0 1px;
+	padding-left: 20px;
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+.cfg-errormessage, .cfg-validationmessage {
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-size: 12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.cfg-errormessage {
+	display: none;
+	margin: 4px 0;
+	width: 260px;
+}
+.cfg-validationmessage {
+	width: 98%;
+	margin-bottom: 16px;
+	padding: 10px 6px;
+	margin-top: 38px;
+}
+.cfg-option-content input[type=radio], .cfg-option-content input[type=checkbox] {
+	margin-right: 2px;
+}
+.cfg-label {
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 18px;
+	color: #fff;
+}
+.cfg-element-content input[type="text"], .cfg-element-content textarea, .cfg-element-content select, .cfg-option-content {
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 14px;
+	color: #fff;
+	height: 18px;
+}
+.cfg-element-content input[type="text"], .cfg-element-content textarea {
+	padding: 6px 4px;
+	border: 0;
+	background: rgba(255, 255, 255, 0.1);
+}
+#cfg-element-4-37-label {
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #fff;
+	text-transform: uppercase;
+}
+#cfg-element-4-37 {
+	width: 98%;
+}
+#cfg-element-4-34-label {
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #fff;
+	text-transform: uppercase;
+}
+#cfg-element-4-34 {
+	width: 98%;
+}
+#cfg-element-4-35-label {
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #fff;
+	text-transform: uppercase;
+}
+#cfg-element-4-35 {
+	width: 95%;
+}
+#cfg-element-4-36 {
+	width: 70px;
+	font-family: 'Titillium Web', 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	margin-left: 0;
+	color: #555555;
+	background-color: #f1f1f1;
+	padding: 4px;
+}
+#cfg-element-4-36:hover {
+	opacity: 1;
+}
+.cfg-validationmessage {
+	background-color: #1A9179;
+	color: #fff;
+	padding: 5px 7px;
+}
+.cfg-errormessage {
+	background-color: rgba(255, 255, 255, 0);
+	color: #CC2B2B;
+	padding: 0px 7px;
+	width: 97%;
+	margin: 0;
+}
