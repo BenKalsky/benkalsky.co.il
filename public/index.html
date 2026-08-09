@@ -20,6 +20,14 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Dev traffic marks itself: GA4's internal-traffic filter matches the
+  // traffic_type parameter, and setting it here by hostname works from any
+  // machine and survives any IP change — an IP rule in the console does
+  // neither. Pushed before consent defaults so it precedes every event.
+  // TRACKING.md carries the one-time GTM mapping this relies on.
+  if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    window.dataLayer.push({ traffic_type: 'internal' });
+  }
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',

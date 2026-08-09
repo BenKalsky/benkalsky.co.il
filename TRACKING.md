@@ -44,6 +44,11 @@ Data-layer keys persist across pushes, so **every push sets both parameter keys*
 3. **Tag:** GA4 Event, measurement ID `G-Z3NYH9CH0F`, Event Name `{{Event}}`, parameters `cta_location = {{cta_location}}` and `method = {{method}}`, trigger `conv-events`.
 4. **GA4 → Admin → Key events:** mark `generate_lead`, `whatsapp_click`, `schedule_click` as key events (counting: once per session).
 5. Optional: register `cta_location` as a custom dimension (event scope) in GA4.
+6. **Internal traffic (dev machines):** the pages push `traffic_type: "internal"` to the dataLayer whenever the hostname is `localhost`/`127.0.0.1`/`[::1]` — hostname, not IP, so it works from any machine and survives any IP change. Two console steps make GA4 honor it:
+   - **GTM:** Data Layer Variable `traffic_type` (DLV name `traffic_type`), and on the GA4 tags add under *Fields to set* / parameters: `traffic_type = {{traffic_type}}`. On production hostnames the variable is undefined and the field is simply omitted.
+   - **GA4 → Admin → Data Filters:** the built-in *Internal Traffic* filter matches `traffic_type = internal`. It is created in **Testing** state — switch it to **Active**, or the parameter is recorded and filters nothing.
+
+   Why not an IP rule: residential IPs rotate, and an IP rule fails silently when they do. The hostname mark covers dev traffic wholesale; browsing the live site from personal devices is accepted as noise (pageviews, not conversions — the conversion-polluting path was the verify scripts, and those are network-blocked since 2026-08-07).
 
 ## Validation checklist
 
