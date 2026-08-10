@@ -443,18 +443,27 @@ const canonicalURL = new URL(canonicalPath, 'https://www.benkalsky.co.il').href;
   .post-cta {
     margin-top: 44px;
     background: var(--acid);
+    /* Bottom padding is deliberately larger than the rest: the box opens on a
+       heading whose line-height adds optical air above it, while the button's
+       edge sits flush against the bottom padding — equal values read as a
+       cropped bottom (reported on the live site, 2026-08-10). */
     padding: clamp(26px, 4vw, 40px);
+    padding-bottom: clamp(34px, 5vw, 48px);
   }
   .post-cta h2 { margin: 0 0 10px; }
   .post-cta p { margin: 0 0 20px; max-width: 52ch; }
   .btn {
     display: inline-block;
-    padding: 16px 30px;
+    padding: 14px 28px;
     font-weight: 700;
     font-size: 17px;
     cursor: pointer;
   }
-  .btn-solid { background: var(--ink); color: var(--paper); }
+  /* The border exists in both states so hover cannot change the button's
+     size, and so the paper-on-acid hover keeps a visible boundary: paper on
+     acid alone is ~1:1 luminance and the button melted into the box
+     (reported on the live site, 2026-08-10). */
+  .btn-solid { background: var(--ink); color: var(--paper); border: 2px solid var(--ink); }
   .btn-solid:hover { background: var(--paper); color: var(--ink); }
 
   /* ---------- blog index ---------- */
