@@ -9,10 +9,18 @@ import { meta as smallBizAutomation } from './small-business-automation.astro';
 import { meta as buildAiAgent } from './build-ai-agent.astro';
 import { meta as n8nVsMake } from './n8n-vs-make.astro';
 import { meta as claudeHebrew } from './claude-hebrew.astro';
+import { meta as aiCustomerService } from './ai-customer-service.astro';
 
 const formatDate = (iso) => iso.split('-').reverse().join('.');
 
 const posts = [
+  {
+    href: '/blog/ai-customer-service/',
+    title: 'צ\'אטבוט AI לשירות לקוחות: המסלול המלא מפנייה לסגירה',
+    description:
+      'מסלול של פנייה אחת מקצה לקצה, החשבון על דף אחד שקובע אם זה משתלם, מה חייב להיות מוכן לפני שמחברים, ואיך נמדד החודש הראשון.',
+    date: aiCustomerService.datePublished,
+  },
   {
     href: '/blog/claude-hebrew/',
     title: 'קלוד בעברית: מה עובד, מה נשבר, ואיך עוקפים את זה',
