@@ -22,7 +22,8 @@ const faq = [
   },
   {
     q: 'כמה עולה קלוד קוד?',
-    a: 'הוא נכלל במסלולי המנוי בתשלום של Claude, וקיים גם שימוש לפי צריכה. המחירים והמסלולים משתנים תדיר, ולכן המספר הנכון נמצא בעמוד התמחור הרשמי של Anthropic ולא במאמר. העיקרון שיציב: לשימוש אישי מתחילים ממנוי, ולשימוש כבד בודקים את מסלול הצריכה.',
+    a: 'הוא נכלל במסלולי המנוי בתשלום של Claude, וקיים גם שימוש לפי צריכה. המחירים והמסלולים משתנים תדיר, ולכן המספר הנכון נמצא בעמוד התמחור הרשמי ולא במאמר. העיקרון שיציב: לשימוש אישי מתחילים ממנוי, ולשימוש כבד בודקים את מסלול הצריכה.',
+    link: { href: 'https://claude.com/pricing', label: 'עמוד התמחור הרשמי של Claude' },
   },
   {
     q: 'מה ההבדל בין קלוד קוד לצ\'אט של קלוד?',
@@ -70,7 +71,10 @@ const jsonLd = {
       mainEntity: faq.map((item) => ({
         '@type': 'Question',
         name: item.q,
-        acceptedAnswer: { '@type': 'Answer', text: item.a },
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.link ? `${item.a} ${item.link.label}: ${item.link.href}` : item.a,
+        },
       })),
     },
   ],
@@ -139,7 +143,7 @@ const jsonLd = {
       {faq.map((item) => (
         <details>
           <summary>{item.q}</summary>
-          <p>{item.a}</p>
+          <p>{item.a}{item.link && <> <a href={item.link.href}>{item.link.label}</a>.</>}</p>
         </details>
       ))}
     </div>
