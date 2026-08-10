@@ -467,15 +467,14 @@ const canonicalURL = new URL(canonicalPath, 'https://www.benkalsky.co.il').href;
     font-size: 17px;
     cursor: pointer;
   }
-  /* Hover keeps the ink body and switches only the text to acid. Two designs
-     failed here on the live site (both reported 2026-08-10): paper-on-acid
-     with no border melted into the box (~1:1 luminance), and paper-on-acid
-     WITH an ink border still read as washed out. The button appears only
-     inside the acid .post-cta box, so a state that never gives up the ink
-     mass is the one that stays visible. The border exists in both states so
-     hover cannot change the button's size. */
+  /* Hover: paper body, ink text, and the ink border stays — Ben's chosen
+     design (2026-08-10). What made this same combination look broken before
+     was never the colors: the .prose link highlighter (see the exemption at
+     .prose a.btn above) was eating the button's bottom. With that fixed, the
+     paper hover reads correctly, and the border, present in both states,
+     keeps the button's boundary on the acid box and its size fixed. */
   .btn-solid { background: var(--ink); color: var(--paper); border: 2px solid var(--ink); }
-  .btn-solid:hover { color: var(--acid); }
+  .btn-solid:hover { background: var(--paper); color: var(--ink); }
 
   /* ---------- blog index ---------- */
   .blog-head { margin-bottom: 36px; }
