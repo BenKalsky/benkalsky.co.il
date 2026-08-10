@@ -459,12 +459,15 @@ const canonicalURL = new URL(canonicalPath, 'https://www.benkalsky.co.il').href;
     font-size: 17px;
     cursor: pointer;
   }
-  /* The border exists in both states so hover cannot change the button's
-     size, and so the paper-on-acid hover keeps a visible boundary: paper on
-     acid alone is ~1:1 luminance and the button melted into the box
-     (reported on the live site, 2026-08-10). */
+  /* Hover keeps the ink body and switches only the text to acid. Two designs
+     failed here on the live site (both reported 2026-08-10): paper-on-acid
+     with no border melted into the box (~1:1 luminance), and paper-on-acid
+     WITH an ink border still read as washed out. The button appears only
+     inside the acid .post-cta box, so a state that never gives up the ink
+     mass is the one that stays visible. The border exists in both states so
+     hover cannot change the button's size. */
   .btn-solid { background: var(--ink); color: var(--paper); border: 2px solid var(--ink); }
-  .btn-solid:hover { background: var(--paper); color: var(--ink); }
+  .btn-solid:hover { color: var(--acid); }
 
   /* ---------- blog index ---------- */
   .blog-head { margin-bottom: 36px; }
