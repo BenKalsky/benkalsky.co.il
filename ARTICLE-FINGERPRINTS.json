@@ -16,8 +16,8 @@
     "dateModified": "2026-08-08"
   },
   "/blog/claude-hebrew/": {
-    "content": "6ed360c1eaf546db",
-    "dateModified": "2026-08-08"
+    "content": "9e5431cf252fba33",
+    "dateModified": "2026-08-10"
   },
   "/blog/mcp/": {
     "content": "74f98d5b99ac8399",
@@ -37,6 +37,10 @@
   },
   "/blog/ai-customer-service/": {
     "content": "7034c2054ba01940",
+    "dateModified": "2026-08-10"
+  },
+  "/blog/claude-code/": {
+    "content": "40eaf797618a298c",
     "dateModified": "2026-08-10"
   }
 }
