@@ -343,6 +343,14 @@ const canonicalURL = new URL(canonicalPath, 'https://www.benkalsky.co.il').href;
     box-shadow: inset 0 -7px 0 var(--acid);
   }
   .prose a:hover { box-shadow: inset 0 -1.2em 0 var(--acid); }
+  /* The CTA button is an <a> inside .prose, so without this it inherits the
+     highlighter above: an acid strip eats the button's bottom (7px resting,
+     1.2em on hover), melts into the acid box, and the button reads as
+     clipped with its border floating below it — the actual cause of the
+     "missing bottom spacing / grows on hover" report (2026-08-10). The two
+     color-only fixes that preceded this diagnosis are recorded at
+     .btn-solid below. */
+  .prose a.btn, .prose a.btn:hover { box-shadow: none; }
   .prose ul, .prose ol {
     margin: 0 0 16px;
     padding-inline-start: 22px;
